@@ -30,11 +30,11 @@ router.post("/profile-view", userAuth, userController.profileViews);
 router.post("/suggested-friends", userAuth, userController.suggestedFriends);
 
 router.get("/verified", (req, res) => {
-    res.sendFile(path.join(__dirname__, "./views/build/verifiedPage.html"));
+    res.sendFile(path.join(__dirname__, "./views/build", "index.html"));
 });
 
 router.get("/resetpassword", (req, res) => {
-    res.sendFile(path.join(__dirname__, "./views/build/verifiedPage.html"));
+    res.sendFile(path.join(__dirname__, "./views/build", "index.html"));
 });
 
 module.exports = router;
