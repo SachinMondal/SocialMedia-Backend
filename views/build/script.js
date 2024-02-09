@@ -6,7 +6,6 @@ const statusIcon = document.getElementById('statusIcon');
 const statusMessage = document.getElementById('statusMessage');
 const btn = document.getElementById("btn");
 
-
 if (status === 'success') {
     statusIcon.innerHTML = "✔️"
     statusMessage.textContent = message;

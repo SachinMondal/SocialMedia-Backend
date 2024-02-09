@@ -11,23 +11,33 @@ const path = require("path");
 const helmet = require("helmet");
 const morgan = require("morgan");
 
-
-const __dirname__ = path.resolve(path.dirname(""));
 dotenv.config();
-app.use(express.static(path.join(__dirname__, "views/build")))
+
+// Resolve the absolute path of the current directory
+const __dirname = path.resolve();
+
+// Set up the static files directory
+const viewsDirectoryPath = path.join(__dirname, 'views/build');
+app.use(express.static(viewsDirectoryPath));
+
+// Connect to the database
 db();
+
+// Middleware
 app.use(helmet());
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json({ limit: "10mb" }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
+
+// Routes
 app.use(router);
+
+// Error middleware
 app.use(errorMiddleware);
 
-app.listen(Port, (err, res) => {
-    if (err) {
-        console.log("error: " + err);
-    }
-    console.log("server running on port:" + Port);
+// Start the server
+app.listen(Port, () => {
+    console.log("Server is running on port:", Port);
 });
