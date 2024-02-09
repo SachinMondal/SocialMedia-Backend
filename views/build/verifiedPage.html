@@ -66,9 +66,10 @@
         const message = urlParams.get('message');
         const status = urlParams.get('status');
         const card = document.querySelector('.card');
-        const statusIcon = document.getElementsById('statusIcon');
+        const statusIcon = document.getElementById('statusIcon'); // Corrected method
         const statusMessage = document.getElementById('statusMessage');
         const btn = document.getElementById("btn");
+
 
         if (status === 'success') {
             statusIcon.innerHTML = "✔️"
