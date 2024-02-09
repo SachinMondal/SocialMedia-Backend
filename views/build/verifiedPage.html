@@ -85,6 +85,13 @@
             statusIcon.classList.add('error');
             statusMessage.classList.add('error');
             btn.classList.add('hideBtn');
+        } else {
+            statusIcon.innerHTML = "❓"
+            statusMessage.textContent = message;
+            card.classList.add('error');
+            statusIcon.classList.add('error');
+            statusMessage.classList.add('error');
+            btn.classList.add('hideBtn');
         }
 
     </script>
