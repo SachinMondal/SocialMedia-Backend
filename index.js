@@ -14,10 +14,10 @@ const morgan = require("morgan");
 dotenv.config();
 
 // Resolve the absolute path of the current directory
-const __dirname__ = path.resolve();
+
 
 // Set up the static files directory
-const viewsDirectoryPath = path.join(__dirname__, 'views/build');
+const viewsDirectoryPath = path.join(__dirname, 'views/build');
 app.use(express.static(viewsDirectoryPath));
 
 // Connect to the database
