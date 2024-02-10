@@ -107,12 +107,11 @@ const resetPassword = async (req, res) => {
     const { userId, token } = req.params;
 
     try {
-        // find record
         const user = await Users.findById(userId);
 
         if (!user) {
             const message = "Invalid password reset link. Try again";
-            res.redirect(`/users/resetpassword?status=error&message=${message}`);
+            res.redirect(`/users/resetpassword?&status=error&message=${message}`);
         }
 
         const resetPassword = await PasswordReset.findOne({ userId });

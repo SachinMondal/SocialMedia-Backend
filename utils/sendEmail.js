@@ -54,7 +54,7 @@ const sendVerificationEmail = async (user, res) => {
     };
 
     try {
-        console.log("mai hu");
+
         const hashedToken = await hashString(token);
 
         const newVerifiedEmail = await Verification.create({

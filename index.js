@@ -8,15 +8,15 @@ const router = require("./routes/index");
 const errorMiddleware = require("./middlewares/errorMiddleware");
 const dotenv = require("dotenv");
 const path = require("path");
-const helmet = require("helmet");
+
 const morgan = require("morgan");
 
 dotenv.config();
 const __dirname__ = path.resolve(path.dirname(""));
 app.use(express.static(path.join(__dirname__, "views/build")));
-app.use(express.static(path.join(__dirname__, "public")));
+app.use(express.static(path.join(__dirname__, "/public")));
 db();
-app.use(helmet());
+
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json({ limit: "10mb" }));
