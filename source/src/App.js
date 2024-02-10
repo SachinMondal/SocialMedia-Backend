@@ -13,7 +13,7 @@ function App() {
 
   //frontend url -  change it when deployed
   // const url = `http://localhost:3000/login`;
-  const url = `${process.env.REACT_APP_URL}/login`;
+  const url = `https://master--heroic-dodol-d7a42e.netlify.app/login`;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,7 +29,8 @@ function App() {
 
     // server url - change it when deployed
     // const apiUrl = `http://localhost:8800/users/reset-password`;
-    const apiUrl = `${process.env.APP_URL}/users/reset-password`;
+    const apiUrl = `https://socialmedia-7p99.onrender.com/users/reset-password`;
+
 
     try {
       const response = await fetch(apiUrl, {
