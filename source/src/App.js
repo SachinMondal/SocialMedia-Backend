@@ -13,7 +13,7 @@ function App() {
 
   //frontend url -  change it when deployed
   // const url = `http://localhost:3000/login`;
-  const url = `${process.env.APP_URL}/login`;
+  const url = `${process.env.REACT_APP_URL}/login`;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
